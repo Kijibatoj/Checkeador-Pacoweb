@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<htmt xmlns:th="http://www.Thymeleaf.org">
+
+	<head>
+		<title>Grebca</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{css/diseStyle.css}">
+		<script type="text/javascript" th:src="@{js/cobProEdit.js}"></script>
+	</head>
+	<style>
+		h1 {
+			text-align: center;
+		}
+
+		h5 {
+			text-align: center;
+		}
+	</style>
+
+
+	<body onload="NoBack()" style="background-color: rgb(235,235,240);">
+
+		<div id="bgventana">
+			<div di="ventana">
+				<div class="container ">
+					<div class="">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<h4 class="modal-title">Login</h4>
+
+							</div>
+							<div class="modal-body">
+
+								<div class="container">
+
+									<div class="">
+										<div class="col-12 mt-5">
+											<h1>Grebca ©</h1>
+											<br>
+										</div>
+
+
+										<div class="form-row">
+
+											<div class="col-md-12 mb-2">
+												<label for="validationTooltip02">Llave de Acceso</label>
+												<div class="input-group input-group-lg">
+
+													<input name="desc" type="password" class="form-control"
+														placeholder="Clave de usuario" id="desc"
+														style=" font-weight:bold;color:black;font-size: 17pt;"
+														autocomplete="off">
+												</div>
+												<div class="valid-tooltip">
+
+												</div>
+											</div>
+										</div>
+										<input class="btn btn-primary btn-lg btn-block" type="button"
+											value="Verificar Usuario" style=" font-weight:bold;font-size: 17pt;"
+											id="btnloginuser" name="btnloginuser" />
+
+
+									</div>
+
+								</div>
+							</div>
+							<div class="modal-footer">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header th:fragment="header">
+
+
+			<div class="jumbotron">
+				<h1 class="display-4"
+					title="Aplicación web Desarrollada por especialistas GREBCA © J-402830414-9. Garantizando tus registros">
+					PACOweb ®</h1>
+				<h5 class="display-8">Punto administrativo de control y organización</h6>
+					<label>Usuario :<input class="" type="text" id="nfaccli" name="nfaccli"
+							style="background-color: transparent;border-style:none;font-weight:bold;" disabled></label>
+					<p class="lead"></p><button class="btn btn-primary btn-block  " type="button" name="InicioOn"
+						id="InicioOn" value="" data-toggle="modal" data-target="#exampleModalCenter">Check</button>
+
+					<input minlength="1" class="form-control" type="number" name="idenScanner" id="idenScanner">
+
+					<hr class="">
+					<!--<button type="button" class="btn btn-success" id="verficar"  name="Verificar">Verificar</button> -->
+					<button type="button" class="btn btn-danger" id="closeuserchec" name="closeuserchec">Salir</button>
+					<p>.</p>
+					<div class="container " style="width:80%;margin-left:10%;">
+
+						<div class="card">
+							<video id="preview" onclick="scanner();"></video>
+						</div>
+
+					</div>
+			</div>
+
+			<script th:src="@{js/jquery-3.6.4.min.js}"></script>
+			<script th:src="@{js/instascant.min.js}"></script>
+			<script type="text/javascript">
+
+				var sound = new Audio("js/sounds.wav");
+
+			</script>
+
+		</header>
+		<input type="hidden" id="InputAccesskey">
+
+		<div class="modal fade bd-example-modal-xl" id="exampleModalCenter" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalCenterTitle">Check Out</h5>
+						<button type="button" name="closeKey" id="closeKey" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</bu>
+					</div>
+					<div class="modal-body">
+
+						<div class="container">
+
+							<div class="">
+								<div class="col-12 mt-5">
+									<h1>Grebca ©</h1>
+									<br>
+								</div>
+
+								<div class="needs-validation" validate>
+									<div class="form-row">
+										<div class="col-md-12 mb-4">
+
+											<label for="validationTooltip01">Numero de Factura</label>
+											<div class="input-group input-group-lg">
+
+												<input minlength="1" name="co_key" type="number" class="form-control"
+													placeholder="N° de Factura" id="co_key" autocomplete="off">
+											</div>
+											<div class="valid-tooltip">
+												<p></p>
+											</div>
+										</div>
+									</div>
+									<button class="btn btn-primary btn-lg btn-block" type="button" name="btnaccess"
+										id="btnaccess">Verificar</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<form th:action="@{/}" method="GET">
+			<button type="submit" id="closeseci" name="closeseci"
+				style="border-style:none;background-color:transparent;">
+		</form>
+		<footer th:fragment="footer" class="bg-dark  text-center text-white fixed-bottom">
+			<!--<div class="container">
+				<p>Copyright Grebca &copy; -2023 </p>
+			</div>-->
+			<script type="text/javascript" th:src="@{js/swal2.js}"></script>
+			<script type="text/javascript" th:src="@{js/bootstrap.min.js}"></script>
+			<script type="text/javascript" th:src="@{js/CheckOutPACO.js}"></script>
+			<script type="text/javascript" th:src="@{js/Botelegram.js}"></script>
+
+		</footer>
+		<script>
+			$(document).ready(function () {
+				$("#InicioOn").click(function () {
+					$('#exampleModalCenter').modal({ show: true });
+
+
+				});
+
+
+			});
+			function NoBack() {
+				window.location.hash = "no-back-button";
+				window.location.hash = "Again-No-back-button";
+				window.location.hash = "pull-to-refresh";
+				window.onhashchange = function () { window.location.hash = ""; }
+
+
+				if ($('#nfaccli').val() == 0) {
+
+					history.forward();
+					document.getElementById('bgventana').style.visibility = ('visible');
+				}
+
+			}
+
+		</script>
+	</body>
+</htmt>
