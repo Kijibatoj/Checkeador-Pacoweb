@@ -12,7 +12,7 @@ base de datos de una empresa, asi que por ende no puedo publicar y/o clonar la m
 3. Crea un bot de telegram y añade al mismo a un Chat grupal al que quieras que lleguen las notificaciones.
 
 
-##USO:
+## USO:
 1.-Puedes crear la base de datos de la siguiente manera:
 Usa como ejemplo los valores que estan en CheckoutPacoModel para poder crear las tablas de la base de datos con los mismos nombres para poder hacer que el proyecto funcione correctamente, la base de datos se puede llamar PACO_A 
 o el nombre que desees. La misma tiene que estar en un servidor SQL.
