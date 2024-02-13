@@ -26,4 +26,4 @@ con eso el proyecto debe funcionar correctamente.
 
 ## Créditos
 
-Este proyecto fue creado por Abisai Teran (https://github.com/Kijibatoj)https://github.com/Kijibatoj).
+Este proyecto fue creado por Abisai Teran (https://github.com/Kijibatoj).
